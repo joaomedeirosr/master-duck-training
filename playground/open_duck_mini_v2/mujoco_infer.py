@@ -158,12 +158,13 @@ class MjInfer(MJInferBase):
             with mujoco.viewer.launch_passive(
                 self.model,
                 self.data,
-                show_left_ui=False,
-                show_right_ui=False,
+                show_left_ui=True,
+                show_right_ui=True,
                 key_callback=self.key_callback,
             ) as viewer:
                 counter = 0
-                while True:
+
+                while viewer.is_running():
 
                     step_start = time.time()
 

@@ -40,7 +40,7 @@ def main() -> None:
         default="checkpoints",
         help="Where to save the checkpoints",
     )
-    # parser.add_argument("--num_timesteps", type=int, default=300000000)
+
     parser.add_argument("--num_timesteps", type=int, default=150000000)
     parser.add_argument("--env", type=str, default="joystick", help="env")
     parser.add_argument("--task", type=str, default="flat_terrain", help="Task to run")
@@ -50,9 +50,7 @@ def main() -> None:
         default=None,
         help="Resume training from this checkpoint",
     )
-    # parser.add_argument(
-    #     "--debug", action="store_true", help="Run in debug mode with minimal parameters"
-    # )
+  
     args = parser.parse_args()
 
     runner = OpenDuckMiniV2Runner(args)
